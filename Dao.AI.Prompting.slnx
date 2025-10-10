@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Dao.AI.Prompting/Dao.AI.Prompting.csproj" />
+  <Project Path="Dao.AI.Prompting.Tests/Dao.AI.Prompting.Tests.csproj" />
+</Solution>
