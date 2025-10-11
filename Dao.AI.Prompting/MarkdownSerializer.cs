@@ -9,12 +9,16 @@ public static class MarkdownSerializer
     private const int MaxMarkdownHeaderLevel = 6;
 
     /// <summary>
-    /// 
+    /// Translates an object into a markdown representation.
+    /// Representations will include the property names and values of the object.
+    /// Objects at the top level will be represented as H1 headers, 
+    /// with each subsequent level of nesting represented as a lower level header.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="inputData"></param>
-    /// <param name="serializerOptions"></param>
-    /// <returns></returns>
+    /// <param name="inputData">
+    /// The object to translate to markdown
+    /// </param>
+    /// <param name="serializerOptions">Provides different ways to edit the markdown behavior</param>
+    /// <returns>a markdown string</returns>
     public static string Serialize<T>(
         T inputData,
         string objectName,
@@ -55,20 +59,19 @@ public static class MarkdownSerializer
             {
                 return string.Empty;
             }
-            // todo: get the name of the property that holds this collection not the type of collection
-            sb.AppendLine($"{headerLevel} {inputDataType.Name}");
+            sb.AppendLine($"{headerLevel} {propertyName}");
             foreach (var key in dictionary.Keys)
             {
                 int index = 1;
                 sb.AppendLine(SerializeMarkdownRecursively(
                     key,
-                    $"{headerLevel} Key {index}",
+                    $"{index}. Key ",
                     serializerOptions,
                     currentDepth + 1
                 ));
                 sb.AppendLine(SerializeMarkdownRecursively(
                     dictionary[key],
-                    $"Value {index}",
+                    $"{index}. Value ",
                     serializerOptions,
                     currentDepth + 2
                 ));
@@ -78,7 +81,7 @@ public static class MarkdownSerializer
         // if string or primitive
         if (inputData is string || inputDataType.IsPrimitive || inputDataType.IsValueType)
         {
-            sb.AppendLine($"{inputData}");
+            sb.Append($"{inputData}");
             return sb.ToString();
         }
         if (inputData is IEnumerable enumerable)
@@ -87,17 +90,16 @@ public static class MarkdownSerializer
             {
                 return string.Empty;
             }
-            // todo: get the name of the property that holds this collection not the type of collection
-            sb.AppendLine($"{headerLevel} {inputDataType.Name}");
+            sb.AppendLine($"{headerLevel} {propertyName}");
             int index = 1;
             foreach (var item in enumerable)
             {
-                sb.AppendLine(SerializeMarkdownRecursively(
+                sb.AppendLine($"- {SerializeMarkdownRecursively(
                     item,
-                    $"{index}",
+                    $"{index}.",
                     serializerOptions,
                     currentDepth + 1
-                ));
+                )}");
                 index++;
             }
             return sb.ToString();

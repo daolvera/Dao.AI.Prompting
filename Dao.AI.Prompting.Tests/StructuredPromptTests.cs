@@ -26,7 +26,7 @@ public class StructuredPromptTests
         // Act
         var structuredPrompt = new StructuredPrompt<TestData>("System Prompt");
         // Assert
-        structuredPrompt.StructuredData.Should().BeNull();
+        structuredPrompt.StructuredData.Should().BeEmpty();
     }
 }
 

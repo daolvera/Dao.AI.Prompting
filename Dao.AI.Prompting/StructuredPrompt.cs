@@ -5,7 +5,7 @@ public class StructuredPrompt<T>
     public string SystemPrompt { get; set; }
     public string? UserPrompt { get; set; }
     public string? ClosingPrompt { get; set; }
-    public string? StructuredData { get; set; }
+    public string StructuredData { get; set; }
 
     public StructuredPrompt(
         string systemPrompt,
