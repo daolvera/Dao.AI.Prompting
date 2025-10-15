@@ -7,7 +7,3 @@ A .NET 8 library for serializing objects and structured data into Markdown, desi
 - **Markdown Serialization**: Convert any object, dictionary, or collection into Markdown with customizable options.
 - **Structured Prompt Support**: Compose system, user, and closing prompts with embedded structured data.
 - **Simple API**: Minimal setup, easy integration into .NET 8 projects.
-
-## Installation
-
-Install via NuGet:
