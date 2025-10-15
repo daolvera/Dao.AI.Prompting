@@ -1,15 +1,9 @@
-﻿# Dictionary`2
+﻿# Input Data
 Data1
-
 1
-
 Test1
 
-
 Data2
-
 2
-
 Test2
-
 

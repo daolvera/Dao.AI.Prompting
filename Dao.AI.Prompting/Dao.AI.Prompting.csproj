@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/daolvera/Dao.AI.Prompting</PackageProjectUrl>
     <PackageIcon>DAO Codes Logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
