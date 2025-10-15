@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/daolvera/Dao.AI.Prompting</PackageProjectUrl>
-    <PackageIcon>DAO Codes Logo.png</PackageIcon>
+    <PackageIcon>DAO_Codes_Logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/daolvera/Dao.AI.Prompting</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
