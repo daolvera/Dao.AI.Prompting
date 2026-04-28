@@ -46,7 +46,7 @@ public static class MarkdownSerializer
     {
         if (inputData is null)
         {
-            return serializerOptions.IncludeNullVaLues ? $"{propertyName}: Null" : string.Empty;
+            return serializerOptions.IncludeNullValues ? $"{propertyName}: Null" : string.Empty;
         }
         var sb = new StringBuilder();
         string headerLevel = new('#', Math.Min(currentDepth + 1, MaxMarkdownHeaderLevel));

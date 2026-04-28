@@ -1,11 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Dao.AI.Prompting;
+﻿namespace Dao.AI.Prompting;
 
 public class MarkdownSerializerOptions
 {
-    public bool IncludeNullVaLues { get; set; }
+    public bool IncludeNullValues { get; set; }
     public bool IncludeEmptyCollections { get; set; } = true;
-    [Range(1, 15)]
-    public int MaxDepth { get; set; } = 6;
+    public int MaxDepth
+    {
+        get => field;
+        set => field = value is >= 1 and <= 15
+            ? value
+            : throw new ArgumentOutOfRangeException(nameof(MaxDepth), "MaxDepth must be between 1 and 15.");
+    } = 6;
 }

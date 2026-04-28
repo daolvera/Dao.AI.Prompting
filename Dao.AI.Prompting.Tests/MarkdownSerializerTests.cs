@@ -1,4 +1,4 @@
-﻿namespace Dao.AI.Prompting.Tests;
+namespace Dao.AI.Prompting.Tests;
 
 public class MarkdownSerializerTests
 {
@@ -69,7 +69,7 @@ public class MarkdownSerializerTests
     {
         // Arrange
         string? nullString = null;
-        var options = new MarkdownSerializerOptions { IncludeNullVaLues = true };
+        var options = new MarkdownSerializerOptions { IncludeNullValues = true };
 
         // Act
         var result = MarkdownSerializer.Serialize(nullString, "null test", options);
@@ -83,7 +83,7 @@ public class MarkdownSerializerTests
     {
         // Arrange
         string? nullString = null;
-        var options = new MarkdownSerializerOptions { IncludeNullVaLues = false };
+        var options = new MarkdownSerializerOptions { IncludeNullValues = false };
 
         // Act
         var result = MarkdownSerializer.Serialize(nullString, "null test", options);
@@ -216,7 +216,7 @@ public class MarkdownSerializerTests
     {
         // Arrange
         int? value = null;
-        var options = new MarkdownSerializerOptions { IncludeNullVaLues = true };
+        var options = new MarkdownSerializerOptions { IncludeNullValues = true };
 
         // Act
         var result = MarkdownSerializer.Serialize(value, "null test", options);
@@ -290,7 +290,7 @@ public class MarkdownSerializerTests
     {
         // Arrange
         var obj = new TestClass { Name = "John", Description = null };
-        var options = new MarkdownSerializerOptions { IncludeNullVaLues = true };
+        var options = new MarkdownSerializerOptions { IncludeNullValues = true };
 
         // Act
         var result = MarkdownSerializer.Serialize(obj, "Test", options);
@@ -304,7 +304,7 @@ public class MarkdownSerializerTests
     {
         // Arrange
         var obj = new TestClass { Name = "John", Description = null };
-        var options = new MarkdownSerializerOptions { IncludeNullVaLues = false };
+        var options = new MarkdownSerializerOptions { IncludeNullValues = false };
 
         // Act
         var result = MarkdownSerializer.Serialize(obj, "Test", options);
