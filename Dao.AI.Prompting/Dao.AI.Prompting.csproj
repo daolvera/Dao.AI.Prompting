@@ -13,6 +13,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>Prompting;Prompt;AI Prompt;Markdown; Markdown Serializer; Serializer</PackageTags>
     <Title>AI Markdown Prompt Serializer</Title>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
